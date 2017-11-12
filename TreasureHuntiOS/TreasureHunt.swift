@@ -15,7 +15,7 @@ class TreasureHunt {
 //    print("Welcome to your treasure hunt! Let's get started")
 //    print("The objective of the game is to find where the treasure is located! You will be given a set of choices and each choice determines whether you will move further from or closer to the treasure. Good luck!")
         
-        let intro: String = "Welcome to your treasure hunt! Let's get started\n" + " The objective of the game is to find where the treasure is located! You will be given a set of choices and each choice determines whether you will move further from or closer to the treasure. Please click the 'enter' button to begin"
+        let intro: String = "Welcome to your treasure hunt!\n" + "In this game, you will be given a set of choices and each choice determines whether you will move further from or closer to the treasure.\n" + "Click the 'next' button to begin"
         return intro
 }
 
