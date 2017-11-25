@@ -129,10 +129,10 @@ func result (input3: String) {
 }
     
     func resultText (input: String) -> String {
-        if (input == "right") {
+        if (input == correctPath) {
             return "Congratulations, you have found the treasure!\n" + " Do you want to play again? Enter yes or no."
         }
-        if (input == "left") {
+        if (input == wrongPath) {
             return "You chose the wrong door. Better luck next time!" + " Do you want to play again? Enter yes or no."
         }
         return "..."
@@ -144,11 +144,17 @@ func playAgain() -> String {
     
 }
 
-
+var correctPath = "left"
+var wrongPath = "right"
 
 
 func playGame(){
 var theInput = "yes"
+let randomInt = Int(arc4random_uniform(2))
+if (randomInt == 0) {
+        correctPath = "right"
+        wrongPath = "left"
+    }
 if (theInput == "yes") {
     theInput = getUserInput1()
     theInput = getUserInput2(input: theInput)

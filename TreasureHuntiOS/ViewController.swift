@@ -45,8 +45,12 @@ class ViewController: UIViewController {
         error.isHidden = true
         imageView.frame = CGRect(x: 0, y: 0, width: 280, height: 320)
         view.addSubview(imageView)
-        imageView.center = self.view.center;
+        imageView.center = self.view.center
+        theText.center.x = self.view.center.x
+        input.center.x = self.view.center.x
         
+
+
         
 //        theText.text = game.getUserInput1text()
         // Do any additional setup after loading the view, typically from a nib.
@@ -72,7 +76,7 @@ class ViewController: UIViewController {
     @IBAction func enter(_ sender: UIButton) {
         input.isHidden = false
         // *** move game logic back into game class in next version ***
-        if let textEntry = input.text {
+        if var textEntry = input.text {
             if (currentLocation == 0) {
                 theText.text = game.getUserInput1text()
                 imageView.image = UIImage(named:"beachFinal")
@@ -145,6 +149,13 @@ class ViewController: UIViewController {
                 }
             } else if (currentLocation == 3) {
                 error.isHidden = true
+                let randomInt = Int(arc4random_uniform(2))
+                if (randomInt == 0) {
+                    textEntry = "right"
+                }
+                else {
+                    textEntry = "left"
+                }
                 if (textEntry == "right") {
                     theText.text = game.resultText(input: "right")
                     imageView.image = UIImage(named:"pirateFinal")
