@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         imageView.center = self.view.center
         theText.center.x = self.view.center.x
         input.center.x = self.view.center.x
-        
+        error.center.x = self.view.center.x
 
 
         
